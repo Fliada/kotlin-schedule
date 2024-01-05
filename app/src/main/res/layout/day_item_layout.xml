@@ -3,50 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/lesson_bg">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/lesson_title"
+        android:id="@+id/day_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf=""
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf=""
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Понедельник" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/lesson_subtitle"
+        android:id="@+id/day_subtitle"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/day_title"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/lesson_title"
+        app:layout_constraintStart_toStartOf="@+id/day_title"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="2 пары с 11:20 до 14:45" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/chat_message_preview_barrier"
-        android:layout_width="wrap_content"
+    <view
+        android:id="@+id/lessons_recycler_view"
+        class="androidx.recyclerview.widget.RecyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:barrierDirection="left"
-        app:constraint_referenced_ids="" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/chat_message_preview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:ellipsize="end"
-        android:maxLines="2"
-        app:layout_constraintEnd_toStartOf="@id/chat_message_preview_barrier"
-        app:layout_constraintStart_toStartOf="@id/chat_username"
-        app:layout_constraintTop_toBottomOf="@id/chat_username"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at augue eu velit dictum vulputate. Etiam eu arcu eleifend, mollis." />
+        tools:itemCount="5"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/day_subtitle"
+        app:layout_constraintStart_toStartOf="@+id/day_subtitle"
+        app:layout_constraintTop_toBottomOf="@+id/day_subtitle"
+        tools:listitem="@layout/lesson_item_layout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

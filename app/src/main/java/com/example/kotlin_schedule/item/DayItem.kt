@@ -1,4 +1,6 @@
 package com.example.kotlin_schedule.item
 
-class DayItem {
-}
+data class DayItem(
+    val dayNumber: Int,
+    val lessons: List<LessonItem>
+)

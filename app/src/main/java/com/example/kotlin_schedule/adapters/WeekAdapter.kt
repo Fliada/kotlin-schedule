@@ -32,7 +32,9 @@ class WeekAdapter : RecyclerView.Adapter<WeekAdapter.WeekViewHolder>() {
     }
 
     fun submitList(list: List<DayItem>) {
+        this.list.clear()
         this.list.addAll(list)
+        notifyDataSetChanged()
     }
 
     class WeekViewHolder(

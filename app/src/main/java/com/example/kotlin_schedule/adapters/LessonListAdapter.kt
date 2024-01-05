@@ -27,6 +27,7 @@ class LessonListAdapter : RecyclerView.Adapter<LessonListAdapter.LessonViewHolde
     }
 
     fun submitList(list: List<LessonItem>) {
+        this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
     }

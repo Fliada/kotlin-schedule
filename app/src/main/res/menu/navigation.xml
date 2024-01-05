@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item android:id="@+id/navigation_lesson_list"
+        android:icon="@drawable/today_icon"
+        android:title="Сегодня"/>
+
+    <item android:id="@+id/navigation_week"
+        android:icon="@drawable/week_icon"
+        android:title="Неделя"/>
+
+</menu>
